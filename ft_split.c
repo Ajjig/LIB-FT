@@ -5,7 +5,7 @@ static char *ft_alloc_fill(char *dest, char *src, char c) /* allocate and fills 
     int i;
 
     i = 0;
-    while(src[i] && src[i] != c)
+    while (src[i] && src[i] != c)
         i++;
     dest = (char *) malloc((i + 1) * sizeof(char));
     i = 0;
