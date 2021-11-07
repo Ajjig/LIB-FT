@@ -27,7 +27,8 @@ SRCS =  ft_calloc.c \
 		ft_strtrim.c \
 		ft_strmapi.c \
 		ft_striteri.c \
-		ft_split.c
+		ft_split.c \
+		ft_putchar_fd.c
 OBJS = ${SRCS:.c=.o}
 
 CC = gcc
