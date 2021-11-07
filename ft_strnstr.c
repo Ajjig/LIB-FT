@@ -6,7 +6,7 @@
 /*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:08:51 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/07 17:18:53 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/07 20:00:23 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 	to_find = (char *) little;
 	if (!to_find[i] || big == little)
 		return (str);
-	while (str[i] && --len)
+	while (str[i] && i < len)
 	{
 		if (str[i] == *to_find)
-			if (ft_check_is_here(&str[i], to_find, len))
+			if (ft_check_is_here(&str[i], to_find, len - i))
 				return (str + i);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:37:05 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/07 18:51:14 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/07 19:09:04 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-size_t		ft_strlen(char *str);
+size_t		ft_strlen(const char *str);
 char		*ft_strdup(char *src);
 int			ft_isdigit(int c);
 int			ft_isascii(int c);
@@ -46,7 +46,7 @@ char		*ft_strjoin(char const *s1, char const *s2);
 int			ft_isprint(int c);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
-int			ft_strncmp(char *s1, char *s2, unsigned int n);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strnstr(const char	*big, const char *little, size_t len);
 char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -55,6 +55,6 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
-int			ft_atoi(char *str);
+int			ft_atoi(const char *str);
 
 #endif
