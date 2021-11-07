@@ -35,16 +35,26 @@ SRCS =  ft_calloc.c \
 OBJS = ${SRCS:.c=.o}
 
 CC = gcc
+
 CFLAGS =  -c -Wall -Wextra -Werror
+
 NAME = libft.a
-all:
-	@$(CC) $(CFLAGS) $(SRCS)
-	@echo "===== COMPILED SUCCESSFULLY ====="
-	@make lib
+
+all:  compile $(NAME)
+
+$(NAME):
+	@ar rc $(NAME) $(OBJS)
+
 clean:
-	@rm $(OBJS) $(NAME)
+	@rm $(OBJS)
+
+fclean:
+	@rm $(NAME) $(OBJS)
+
 lib:
 	@ar rc $(NAME) $(OBJS)
-	@echo "===== LIBRARY HAS BEEN CREATED SUCCESSFULLY ====="
-re: clean all
-	@echo "===== CLEANED OBJS AND LIBFT.A ====="
+
+re: fclean all
+
+compile:
+	@$(CC) $(CFLAGS) $(SRCS)
