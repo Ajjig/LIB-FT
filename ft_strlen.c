@@ -6,20 +6,18 @@
 /*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:07:28 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/07 18:29:12 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/07 18:53:12 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
-	if (str == NULL)
-		return (0);
-	while (str[len] != '\0')
+	while (*str++)
 		len++;
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:37:05 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/07 18:01:59 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/07 18:51:14 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-int			ft_strlen(char *str);
+size_t		ft_strlen(char *str);
 char		*ft_strdup(char *src);
 int			ft_isdigit(int c);
 int			ft_isascii(int c);
