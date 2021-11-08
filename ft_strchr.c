@@ -6,7 +6,7 @@
 /*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:05:46 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/08 11:52:27 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/08 15:46:31 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char ch;
+	unsigned char	ch;
 
 	ch = (unsigned char) c;
 	while (*s)

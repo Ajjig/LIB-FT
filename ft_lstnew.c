@@ -6,7 +6,7 @@
 /*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:02:55 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/08 12:09:05 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/08 15:45:43 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ t_list	*ft_lstnew(void *content)
 	new = malloc(sizeof(t_list *));
 	new->content = content;
 	new->next = NULL;
-	return(new);
+	return (new);
 }

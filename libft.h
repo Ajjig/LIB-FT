@@ -6,7 +6,7 @@
 /*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:37:05 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/08 12:09:33 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/08 15:47:43 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char		*ft_strjoin(char const *s1, char const *s2);
 int			ft_isprint(int c);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
-t_list 		*ft_lstnew(void *content);
+t_list		*ft_lstnew(void *content);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strnstr(const char	*big, const char *little, size_t len);
 char		*ft_strtrim(char const *s1, char const *set);
