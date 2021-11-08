@@ -6,19 +6,13 @@
 /*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:05:13 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/07 21:34:44 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/08 11:20:15 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void free_blocks(char **block, int n)
-{
-	while (n)
-		free(block[--n]);
-}
-
-static char	*ft_alloc_fill(char *dest, char *src, char c, char **tobefree)
+static char	*ft_alloc_fill(char *dest, char *src, char c)
 {
 	int	i;
 
@@ -27,7 +21,10 @@ static char	*ft_alloc_fill(char *dest, char *src, char c, char **tobefree)
 		i++;
 	dest = (char *) malloc((i + 1) * sizeof(char));
 	if (dest == NULL)
+	{
+		free(dest);
 		return(NULL);
+	}
 	i = 0;
 	while (src[i] && src[i] != c)
 	{
@@ -40,22 +37,20 @@ static char	*ft_alloc_fill(char *dest, char *src, char c, char **tobefree)
 
 static int	ft_count_words(char *str, char c)
 {
-	int	i;
 	int	words;
 
-	i = 0;
 	words = 0;
-	while (str[i] && str[i] == c)
-		i++;
-	while (str[i])
+
+	while (*str)
 	{
-		if (str[i] == c)
-		{
-			words++;
-			while (str[i] && str[i] == c)
-				i++;
-		}
-		i++;
+		if (*str != c)
+	  {
+		  words++;
+		while (*str && *str != c)
+			str++;
+		continue ;
+	  }
+	  str++;
 	}
 	return (words + 1);
 }
@@ -77,8 +72,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] != c)
 		{
-			str[j] = ft_alloc_fill(str[j], (char *) &s[i], c, str);
-			ft_check_allocate()
+			str[j] = ft_alloc_fill(str[j], (char *) &s[i], c);
 			j++;
 			while (s[i + 1] && s[i + 1] != c)
 				i++;

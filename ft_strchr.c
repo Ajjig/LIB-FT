@@ -6,25 +6,26 @@
 /*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:05:46 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/07 19:20:40 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/08 11:52:27 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c < 0 || c > 127)
-		return (s);
+	unsigned char ch;
+
+	ch = (unsigned char) c;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == ch)
 		{
-			return (s);
+			return ((char *) s);
 		}
 		s++;
 	}
-	if (!c)
-		return (s);
+	if (!ch)
+		return ((char *) s);
 	return (0);
 }
