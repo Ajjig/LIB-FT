@@ -49,7 +49,7 @@ static int	ft_count_words(char *str, char c)
 	return (words + 1);
 }
 
-int	ft_check_is_alloc(char **str, int j)
+static int	ft_check_is_alloc(char **str, int j)
 {
 	if (str[j] == NULL)
 	{
