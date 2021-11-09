@@ -38,30 +38,29 @@ BNS = ft_lstnew.c \
 
 OBJS = ${SRCS:.c=.o}
 
+OBJSBNS = ${BNS:.c=.o}
+
 CC = gcc
 
 CFLAGS = -c -Wall -Wextra -Werror
 
 NAME = libft.a
 
-all:  compile $(NAME)
-
-$(NAME): lib
-
-clean: *.o
-	@rm $(OBJS)
-
-fclean: clean
-	@rm $(NAME)
-
+all:
+	@$(CC) $(CFLAGS) $(SRCS)
+	@ar rc $(NAME) $(OBJS)
 lib:
 	@ar rc $(NAME) $(OBJS)
 
-re: fclean all $(NAME)
+clean:
+	@rm -f $(OBJS)
+	@rm -f $(OBJSBNS)
 
-compile:
-	@$(CC) $(CFLAGS) $(SRCS)
+fclean: clean
+	@rm -f $(NAME)
+
+re: fclean all
 
 bonus:
-	@$(CC) $(CFLAGS) $(BNS)
-	@ar rcs $(NAME) ${BNS:.c=.o}
+	@$(CC) $(CFLAGS) $(SRCS) $(BNS)
+	@ar rc $(NAME) $(OBJS) $(OBJSBNS)
