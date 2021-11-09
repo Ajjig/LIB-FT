@@ -6,7 +6,7 @@
 /*   By: majjig <majjig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:16:46 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/09 12:13:36 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/09 19:17:44 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (*lst && new)
+	if (*lst || new)
 	{
 		new->next = *lst;
 		*lst = new;
