@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: majjig <majjig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:05:13 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/08 15:44:47 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/09 13:58:57 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ static int	ft_check_is_alloc(char **str, int j)
 {
 	if (str[j] == NULL)
 	{
-		while (j >= 0)
-			free(str[j--]);
+		while (j)
+			free(str[--j]);
 		free(str);
 		return (0);
 	}
