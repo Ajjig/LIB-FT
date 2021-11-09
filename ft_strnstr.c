@@ -6,7 +6,7 @@
 /*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:08:51 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/07 20:00:23 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/09 19:46:19 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_check_is_here(char *str, char *to, size_t len)
 	i = 0;
 	while (to[i])
 	{
-		if (str[i] != to[i] || !len--)
+		if (str[i] != to[i] || len-- == 0)
 			return (0);
 		i++;
 	}
