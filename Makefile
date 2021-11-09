@@ -33,13 +33,14 @@ SRCS =  ft_calloc.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 BNS = ft_lstnew.c \
-	  ft_lstadd_front.c
+	  ft_lstadd_front.c \
+	  ft_lstsize.c
 
 OBJS = ${SRCS:.c=.o}
 
 CC = gcc
 
-CFLAGS =  -c -Wall -Wextra -Werror
+CFLAGS = -c -Wall -Wextra -Werror
 
 NAME = libft.a
 
@@ -47,20 +48,20 @@ all:  compile $(NAME)
 
 $(NAME): lib
 
-clean:
+clean: *.o
 	@rm $(OBJS)
 
-fclean:
-	@rm $(NAME) $(OBJS)
+fclean: clean
+	@rm $(NAME)
 
 lib:
 	@ar rc $(NAME) $(OBJS)
 
-re: fclean all
+re: fclean all $(NAME)
 
 compile:
 	@$(CC) $(CFLAGS) $(SRCS)
 
 bonus:
 	@$(CC) $(CFLAGS) $(BNS)
-	@ar rc $(NAME) ${BNS:.c=.o}
+	@ar rcs $(NAME) ${BNS:.c=.o}
