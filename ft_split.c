@@ -12,11 +12,14 @@
 
 #include "libft.h"
 
-static char	*ft_alloc_fill(char *dest, char *src, char c)
+static char	*ft_alloc_fill(char *src, char c)
 {
-	int	i;
+	int		i;
+	char	*dest;
 
 	i = 0;
+	while (src[i] && src[i] != c)
+		i++;
 	dest = (char *) malloc((i + 1) * sizeof(char));
 	i = 0;
 	while (src[i] && src[i] != c)
@@ -65,19 +68,20 @@ char	**ft_split(char const *s, char c)
 	int		words;
 	char	**str;
 
+	if (s == NULL)
+		return (NULL);
 	words = ft_count_words((char *) s, c);
 	str = (char **) malloc(words * sizeof(char *));
-	if (str == NULL || s == NULL)
+	if (str == NULL)
 		return (NULL);
 	j = 0;
 	while (*s)
 	{
 		if (*s != c)
 		{
-			str[j] = ft_alloc_fill(str[j], (char *) s, c);
-			if (!(ft_check_is_alloc(str, j)))
+			str[j] = ft_alloc_fill((char *) s, c);
+			if (!(ft_check_is_alloc(str, j++)))
 				return (NULL);
-			j++;
 			while (*(s + 1) && *(s + 1) != c)
 				s++;
 		}
