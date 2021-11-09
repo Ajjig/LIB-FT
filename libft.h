@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: majjig <majjig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:37:05 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/08 15:47:43 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/09 12:12:43 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ char		*ft_strjoin(char const *s1, char const *s2);
 int			ft_isprint(int c);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
-t_list		*ft_lstnew(void *content);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strnstr(const char	*big, const char *little, size_t len);
 char		*ft_strtrim(char const *s1, char const *set);
@@ -57,5 +56,10 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 int			ft_atoi(const char *str);
+/* Bonus part */
+
+t_list		*ft_lstnew(void *content);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+int			ft_lstsize(t_list *lst);
 
 #endif
