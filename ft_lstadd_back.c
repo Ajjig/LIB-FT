@@ -6,7 +6,7 @@
 /*   By: majjig <majjig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:48:28 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/10 14:49:07 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/10 15:36:07 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*last;
+
+	if (new == NULL)
+		return ;
 	if (*lst == NULL)
-		*lst = new;
-	else
 	{
-		while ((*lst)->next)
-			*lst = (*lst)->next;
-		(*lst)->next = new;
+		*lst = new;
+		return ;
 	}
+	last = ft_lstlast(*lst);
+	last->next = new;
 }
