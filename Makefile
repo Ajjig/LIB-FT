@@ -6,7 +6,7 @@
 #    By: majjig <majjig@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/10 15:31:37 by majjig            #+#    #+#              #
-#    Updated: 2021/11/10 15:43:30 by majjig           ###   ########.fr        #
+#    Updated: 2021/11/10 20:08:55 by majjig           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,9 @@ CFLAGS = -c -Wall -Wextra -Werror
 
 NAME = libft.a
 
-all:
+all: $(NAME)
+
+$(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(SRCS)
 	@ar rc $(NAME) $(OBJS)
 lib:
@@ -78,6 +80,6 @@ fclean: clean
 
 re: fclean all
 
-bonus:
+bonus: $(OBJS) $(OBJSBNS)
 	@$(CC) $(CFLAGS) $(SRCS) $(BNS)
 	@ar rc $(NAME) $(OBJS) $(OBJSBNS)
