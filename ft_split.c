@@ -6,7 +6,7 @@
 /*   By: majjig <majjig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:05:13 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/09 13:58:57 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/10 19:38:29 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static char	*ft_alloc_fill(char *src, char c)
 	while (src[i] && src[i] != c)
 		i++;
 	dest = (char *) malloc((i + 1) * sizeof(char));
+	if (dest == NULL)
+		return (NULL);
 	i = 0;
 	while (src[i] && src[i] != c)
 	{
