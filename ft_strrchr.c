@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majjig <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: majjig <majjig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:09:40 by majjig            #+#    #+#             */
-/*   Updated: 2021/11/08 15:47:04 by majjig           ###   ########.fr       */
+/*   Updated: 2021/11/11 23:12:09 by majjig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 		return (0);
 	while (s[i])
 		i++;
+	i++;
 	while (i >= 0)
 	{
 		if (s[i] == ch)
